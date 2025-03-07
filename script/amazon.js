@@ -1,39 +1,4 @@
-const products = [
-  {
-    Image: 'images/products/athletic-cotton-socks-6-pairs.jpg',
-    name : 'Black and Gray Athletic Cotton Socks - 6 Pairs',
-    priceCents : 1090,
-    priceCurrency : 'USD',
-    rating : {
-      stars : 4.5,
-      reviews : 87
-    }
-  },
-    
-  {
-    Image: 'images/products/intermediate-composite-basketball.jpg',
-    name : 'Intermediate Size Basketball',
-    priceCents : 2095,
-    priceCurrency : 'USD',
-    rating : {
-      stars : 4.0,
-      reviews : 127
-    }
-  },
-
-  {
-    Image: 'images/products/adults-plain-cotton-tshirt-2-pack-teal.jpg',
-    name : ' Adults Plain Cotton T-Shirt - 2 Pack',
-    priceCents : 799,
-    priceCurrency : 'USD',
-    rating : {
-      stars : 4.5,
-      reviews : 56
-    }
-  }
-];
-
-let productsHTML = '';
+ let productsHTML = '';
 
 products.forEach((product) => {
   productsHTML += `
