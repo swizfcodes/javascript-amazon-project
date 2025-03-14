@@ -4,11 +4,16 @@ import { formatCurrency } from './utils/money.js';
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 import { deliveryOptions } from '../data/deliveryOptions.js';
 
+
 const today = dayjs();
 const deliveryDate = today.add(7, 'days');
 deliveryDate.format('dddd, MMMM D');
 
 function renderOrderSummary(){
+  const today = dayjs();
+  const deliveryDate = today.add(7, 'days');
+  deliveryDate.format('dddd, MMMM D');
+
   let cartSummaryHTML = '';
 
   cart.forEach((cartItem) => {
@@ -22,17 +27,18 @@ function renderOrderSummary(){
       }
     });
 
-    const deliveryOptionsId = cartItem.deliveryOptionsId;
+    const deliveryOptionId = cartItem.deliveryOptionsId;
 
     let deliveryOption;
 
     deliveryOptions.forEach((option) => {
-      if (option.id === deliveryOptionsId) {
+      if (option.id === deliveryOptionId) {
         deliveryOption = option;
       }
     });
 
     const today = dayjs();
+    console.log(today);
     const deliveryDate = today.add(deliveryOption.deliveryDays, 'days');
     const dateString = deliveryDate.format('dddd, MMMM D');
 
@@ -96,7 +102,7 @@ function renderOrderSummary(){
       deliveryOptionsHTML += `
       <div class="delivery-option js-delivery-option" 
         data-product-id="${matchingProducts.id}"
-        data-delivery-option-id="${deliveryOptions.id}">
+        data-delivery-option-id="${deliveryOption.id}">
 
         <input type="radio"
         ${isChecked}
@@ -130,11 +136,9 @@ function renderOrderSummary(){
   });
 
   document.querySelectorAll('.js-delivery-option').forEach((element) => {
-    element.addEventListener('cick', () => {
-      //const {productId, deliveryOptionsId} = element.dataset;
-      const productId = element.dataset.productId;
-      const deliveryOptionsId = element.dataset.deliveryOptionsId;
-      updateDeliveryOptions(productId, deliveryOptionsId);
+    element.addEventListener('click', () => {
+      const { productId, deliveryOptionId } = element.dataset;
+      updateDeliveryOptions(productId, deliveryOptionId);
       renderOrderSummary();
     });
   });
