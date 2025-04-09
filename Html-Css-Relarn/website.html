@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website</title>
+</head>
+<style>
+  body{
+    display: flex;
+    gap: 10px;
+    margin: 20px;
+  }
+  button {
+    background: rgb(201, 0, 0);
+    border-radius: 2px;
+    color: aliceblue;
+    font-weight: bolder;
+    cursor: pointer;
+    border: none;
+    height: 30px;
+    width: 100px;
+    transition: opacity 0.15;
+  }
+
+  button:hover{
+    opacity: 0.7;
+  }
+
+  button:active{
+    opacity: 0.4;
+  }
+
+  .button2{
+    background: rgb(255, 255, 255);
+    border-radius: 2px;
+    color: rgb(117, 172, 221);
+    font-weight: bolder;
+    width: 60px;
+    border: solid 1px rgb(117, 172, 221);
+    transition: background-color 0.15s, color 0.15s;
+  }
+
+  .button2:hover{
+    background: rgb(117, 172, 221);
+    color: rgb(255, 255, 255);
+    opacity: 1;
+  }
+  
+  .button2:active{
+    opacity: 0.6;
+  }
+
+  .button3{
+    background: rgb(4, 147, 241);
+    border-radius: 15px;
+    color: rgb(242, 245, 248);
+    font-weight: bolder;
+    width: 70px;
+    font-size: 15px; 
+  }
+
+  .button3:hover{
+    box-shadow: 2px 2px 2px rgb(203, 220, 245);
+    opacity: 1;
+  }
+</style>
+<body>
+  <button> SUBSCRIBE </button>
+  <button class="button2">JOIN</button>
+  <button class="button3">Tweet</button>
+</body>
+</html>

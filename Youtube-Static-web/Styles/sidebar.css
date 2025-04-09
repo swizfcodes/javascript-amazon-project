@@ -1,0 +1,38 @@
+.youtube-sidebar{
+  position: fixed;
+  bottom: 0;
+  width: 75px;
+  top: 55px;
+  justify-content: space-between;
+  background: white;
+}
+
+.youtube-sidebar-contents{
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.youtube-sidebar-contents img {
+  height: 26px;
+}
+
+.youtube-sidebar-contents button{
+  height: 120px;
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+
+}
+
+.youtube-sidebar-contents button p{
+  font-size: 10px;
+}
+
+.youtube-sidebar-contents button:hover{
+  background: rgb(231, 229, 229);
+}
+
